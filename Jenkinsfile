@@ -1,12 +1,15 @@
 pipeline {
-    agent any  
+    agent any 
 
     stages {
-        stage('Checkout') {  
+        stage('GitCheckout') {  
             steps {
                 script {
                     
-                    git branch: 'main', url: 'https://github.com/Gopalakrishna530/gopalDemo.git'
+                gitCheckout(
+                    branch:"main"
+                    url:"https://github.com/Gopalakrishna530/gopalDemo.git"
+                )
                 }
             }
         }
