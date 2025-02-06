@@ -7,7 +7,7 @@ pipeline {
                 script {
                     
                 gitCheckout(
-                    branch:"main"
+                    branch:"main",
                     url:"https://github.com/Gopalakrishna530/gopalDemo.git"
                 )
                 }
