@@ -1,3 +1,5 @@
+@Library('my-shared-library') _
+
 pipeline {
     agent any 
 
@@ -5,19 +7,19 @@ pipeline {
         stage('GitCheckout') {  
             steps {
                 script {
-                    
-                gitCheckout(
-                    branch:"main",
-                    url:"https://github.com/Gopalakrishna530/gopalDemo.git"
-                )
+                    gitCheckout(
+                        branch: "main",
+                        url: "https://github.com/Gopalakrishna530/gopalDemo.git"
+                    )
                 }
             }
         }
         stage('Maven Test') {  
             steps {
                 script {  
-                mvnTest()
+                    mvnTest()
                 }
             }
+        }
     }
 }
